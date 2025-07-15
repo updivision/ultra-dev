@@ -1,0 +1,4 @@
+# Core dependencies
+requests>=2.32.0
+unidiff
+whatthepatch
