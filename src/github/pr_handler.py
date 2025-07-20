@@ -112,9 +112,8 @@ class PRHandler:
             # Get current file content for metadata and context
             file_content = self._get_file_content(filepath, diff)
             file_metadata = self._extract_file_metadata(file_content, filepath)
-            
-            # Check if we should include full file content (for files < 20,000 characters)
-            include_full_file = file_content and len(file_content) < 20000
+            # Check if we should include full file content (for files < 75,000 characters)
+            include_full_file = file_content and len(file_content) < 75000
             
             # Process added lines with exact line numbers
             added_lines = {}
