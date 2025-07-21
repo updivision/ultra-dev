@@ -141,7 +141,39 @@ jobs:
           deepseek_api_key: ${{ secrets.DEEPSEEK_API_KEY }}
 ```
 
-## 🔑 Setup Instructions
+## 📌 Action Versioning
+
+### How to Reference This Action
+
+When using this action in your workflows, you can choose between different versioning strategies:
+
+#### Option 1: Use Latest Major Version (Recommended)
+```yaml
+uses: updivision/up-review@v1
+```
+- **Automatically gets**: Latest features and bug fixes within v1.x.x
+- **Best for**: Most users who want convenience and latest improvements
+- **Updates**: Automatically receives compatible updates
+
+#### Option 2: Pin to Specific Version
+```yaml
+uses: updivision/up-review@v1.0.1
+```
+- **Guarantees**: Exact same behavior every time
+- **Best for**: Production environments requiring strict reproducibility
+- **Updates**: Manual - you control when to update
+
+### Why This Pattern?
+
+**Semantic versioning** encourages precise tags like `v1.0.0`, `v1.0.1`, etc., that never change once published.
+
+But you might want a convenience tag like `v1` that always points to the latest `v1.x.x` release.
+
+This lets you pick either:
+- **A fixed version** (e.g., `v1.0.1`) to ensure stability, or
+- **A moving version** (e.g., `v1`) to get the latest compatible update without changing your workflow
+
+##  Setup Instructions
 
 ### 1. Get API Keys
 
@@ -179,10 +211,20 @@ Add your API keys as repository secrets:
 
 ### 3. GitHub Token Permissions
 
-The action requires these permissions:
+**Important**: You must configure your repository to grant the necessary permissions to the GITHUB_TOKEN.
+
+#### Setting Up Workflow Permissions
+1. Go to your repository → **Settings** → **Actions** → **General**
+2. Scroll down to **Workflow permissions**
+3. Select **"Read and write permissions"**
+4. Click **Save**
+
+The action requires these specific permissions:
 - `contents: read` - To access PR files
 - `pull-requests: write` - To post review comments
 - `issues: write` - To update PR status
+
+Without proper permissions, the action will fail to post review comments on your pull requests.
 
 ## 🤝 Contributing
 
