@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: AI Code Review
-        uses: your-org/code-review-action@v1
+        uses: updivision/ultra-dev@v1
         with:
           ai_provider: 'openai'
           framework: 'laravel'
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: AI Code Review
-        uses: your-org/code-review-action@v1
+        uses: updivision/ultra-dev@v1
         with:
           ai_provider: 'claude'
           framework: 'react'
@@ -113,7 +113,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: AI Code Review
-        uses: your-org/code-review-action@v1
+        uses: updivision/ultra-dev@v1
         with:
           ai_provider: 'gemini'
           framework: 'nuxt'
@@ -133,7 +133,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: AI Code Review
-        uses: your-org/code-review-action@v1
+        uses: updivision/ultra-dev@v1
         with:
           ai_provider: 'deepseek'
           framework: 'nextjs'
@@ -149,7 +149,7 @@ When using this action in your workflows, you can choose between different versi
 
 #### Option 1: Use Latest Major Version (Recommended)
 ```yaml
-uses: updivision/up-review@v1
+uses: updivision/ultra-dev@v1
 ```
 - **Automatically gets**: Latest features and bug fixes within v1.x.x
 - **Best for**: Most users who want convenience and latest improvements
@@ -157,7 +157,7 @@ uses: updivision/up-review@v1
 
 #### Option 2: Pin to Specific Version
 ```yaml
-uses: updivision/up-review@v1.0.1
+uses: updivision/ultra-dev@v1.0.1
 ```
 - **Guarantees**: Exact same behavior every time
 - **Best for**: Production environments requiring strict reproducibility
