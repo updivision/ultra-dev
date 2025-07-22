@@ -1,4 +1,4 @@
-# UpReview
+# UltraDev
 
 A comprehensive GitHub Action that provides intelligent code reviews using multiple AI providers with framework-specific expertise.
 
