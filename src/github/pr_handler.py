@@ -73,7 +73,7 @@ class PRHandler:
             res = subprocess.run([
                 "gh", "api", 
                 f"repos/{self.repo}/pulls/{self.pr_number}/reviews",
-                "--jq", ".[0].body // empty"
+                "--jq", ".[-1].body // empty"
             ], capture_output=True, text=True, check=False)
             
             if res.returncode == 0 and res.stdout.strip():
